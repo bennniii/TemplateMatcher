@@ -1,0 +1,71 @@
+{
+  "name": "@nut-tree/template-matcher",
+  "version": "3.0.0",
+  "main": "dist/index",
+  "typings": "dist/index",
+  "description": "Locate images on your screen using template matching in nut.js",
+  "author": {
+    "name": "Simon Hofmann",
+    "email": "kontakt@s1h.org",
+    "url": "https://s1h.org"
+  },
+  "homepage": "https://nutjs.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bennniii/TemplateMatcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bennniii/TemplateMatcher/issues"
+  },
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "electron": ">=7.0.0"
+  },
+  "keywords": [
+    "native",
+    "system",
+    "automation",
+    "testing",
+    "screen",
+    "monitor",
+    "display",
+    "opencv"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "compile": "npm run clean && npx tsc -p .",
+    "build": "npm run compile",
+    "test": "jest --runInBand",
+    "publish-next": "npm publish --tag next",
+    "prepublishOnly": "npm run compile",
+    "preinstall": "npm i opencv-build"
+  },
+  "dependencies": {
+    "@u4/opencv4nodejs": "^6.2.4",
+    "opencv-build": "^0.1.9"
+  },
+  "devDependencies": {
+    "@types/jest": "29.2.6",
+    "@types/node": "18.11.18",
+    "jest": "29.3.1",
+    "rimraf": "3.0.2",
+    "sneer": "1.0.1",
+    "ts-jest": "29.0.5",
+    "typescript": "4.8.4"
+  },
+  "peerDependencies": {
+    "@nut-tree/nut-js": ">=3.0.0 || ^4.0.0"
+  },
+  "optionalDependencies": {
+    "@nut-tree/nut-js": "^4.2.0"
+  }
+}
